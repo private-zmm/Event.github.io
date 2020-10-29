@@ -4,8 +4,8 @@
 
 # Site
 title: aatb
-subtitle: ''
-description: keywords:卵石之美,luanshizhimei,瞎扯,碎碎念,个人博客,技术博客 
+subtitle: 愿世界充满爱
+description: 云想衣裳花想容, 春风拂槛露华浓
 author: zhou jun wei
 language: zh-CN
 timezone: UTC
@@ -13,7 +13,7 @@ timezone: UTC
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: http://example.com
-root: ./
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -108,10 +108,16 @@ ignore:
 # theme: landscape
 # theme: next
 theme: hexo-theme-matery
-
+# 统计阅读次数
+leancloud_counter:
+  enable: true
+  appId: 'QsmV2mXtpQ2LYkmCfDnCvizj-gzGzoHsz'
+  appKey: 'RE5Wrm7uaMToYFYiThbzoXNK'
+  master_key: 'ly8xhW3EzHFTQITeD8tLn4hj'
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
+  # type: leancloud_counter_sync
   type: git
   repository: https://github.com/private-zmm/Event.github.io.git
   branch: gh-pages
