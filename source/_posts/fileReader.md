@@ -4,8 +4,8 @@ date: 2020-11-02 13:47:40
 tags: 文件上传
 author: 周俊伟
 keywords: 文件上传,fileReader,img转base64
-img: /medias/featureimages/fileReader/02.jpg
-coverImg: /medias/featureimages/fileReader/02.jpg
+img: /medias/featureimages/filereader/02.jpg
+coverImg: /medias/featureimages/filereader/02.jpg
 categories: html 
 ---
 
@@ -43,4 +43,3 @@ const input = document.querySelector('input[type=file]')
     }
   }, false)
 ```
-
