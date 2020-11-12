@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>git</title>
+      <link href="2020/11/12/git-note/"/>
+      <url>2020/11/12/git-note/</url>
+      
+        <content type="html"><![CDATA[<h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><p><code>git add . </code></p><p><code>git commit -m &quot;&quot;</code></p><pre class=" language-dash"><code class="language-dash">git commit -m "featdf: aas"</code></pre><h3 id="commit规范"><a href="#commit规范" class="headerlink" title="commit规范"></a>commit规范</h3><h4 id="Commit-message格式"><a href="#Commit-message格式" class="headerlink" title="Commit message格式"></a>Commit message格式</h4><pre><code>&lt;type&gt;: &lt;subject&gt;</code></pre><p>注意冒号后面有空格。</p><h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>用于说明 commit 的类别，只允许使用下面7个标识。</p><ul><li><code>feat</code>：新功能（feature）</li><li><code>fix</code>：修补bug</li><li><code>docs</code>：文档（documentation）</li><li><code>style</code>： 格式（不影响代码运行的变动）</li><li><code>refactor</code>：重构（即不是新增功能，也不是修改bug的代码变动）</li><li><code>test</code>：增加测试</li><li><code>chore</code>：构建过程或辅助工具的变动</li></ul><p><em>如果type为<code>feat</code>和<code>fix</code>，则该 commit 将肯定出现在 Change log 之中。</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+          <category> tool </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo</title>
+      <link href="2020/11/12/hexonote/"/>
+      <url>2020/11/12/hexonote/</url>
+      
+        <content type="html"><![CDATA[<h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><pre class=" language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span></code></pre><p>创建一个新文章。如果未layout提供，Hexo将使用default_layoutfrom _config.yml。如果title包含空格，请用引号引起来。</p><table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody><tr><td><code>-p</code>, <code>--path</code></td><td>发布路径。自定义帖子的路径。</td></tr><tr><td><code>-r, --replace</code></td><td>替换当前帖子（如果存在）。</td></tr><tr><td><code>-s</code>, <code>--slug</code></td><td>自定义帖子的URL。</td></tr></tbody></table><h2 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h2><pre class=" language-dash"><code class="language-dash">$ hexo g</code></pre><p>生成静态文件。</p><table><thead><tr><th align="left">选项</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>-d</code>， <code>--deploy</code></td><td align="left">生成完成后进行部署</td></tr><tr><td align="left"><code>-w</code>， <code>--watch</code></td><td align="left">观看文件更改</td></tr><tr><td align="left"><code>-b</code>， <code>--bail</code></td><td align="left">如果在生成过程中引发任何未处理的异常，则会引发错误</td></tr><tr><td align="left"><code>-f</code>， <code>--force</code></td><td align="left">强制再生</td></tr><tr><td align="left"><code>-c</code>， <code>--concurrency</code></td><td align="left">并行生成的最大文件数。默认为无穷大</td></tr></tbody></table><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><pre><code>$ hexo s</code></pre><p>启动本地服务器。默认情况下，该位置为<code>http://localhost:4000/</code>。</p><table><thead><tr><th align="left">选项</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>-p</code>， <code>--port</code></td><td align="left">覆盖默认端口</td></tr><tr><td align="left"><code>-s</code>， <code>--static</code></td><td align="left">仅提供静态文件</td></tr><tr><td align="left"><code>-l</code>， <code>--log</code></td><td align="left">启用记录器。覆盖记录器格式。</td></tr></tbody></table><h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><pre><code>$ hexo clean</code></pre><p>清除缓存文件（<code>db.json</code>）和生成的文件（<code>public</code>）。</p><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><pre><code>$ hexo d</code></pre><p>部署您的网站。</p><table><thead><tr><th align="left">选项</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>-g</code>， <code>--generate</code></td><td align="left">部署前生成</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fileReader</title>
       <link href="2020/11/02/filereader/"/>
       <url>2020/11/02/filereader/</url>
@@ -74,31 +126,6 @@
         <content type="html"><![CDATA[]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>article title zjw</title>
-      <link href="2020/10/28/10.23/"/>
-      <url>2020/10/28/10.23/</url>
-      
-        <content type="html"><![CDATA[<ol><li><p>仪表板编辑数据源选择实体的翻译补充</p></li><li><p>对svg内容class替换bug修改</p></li><li><p>网关连接器配置的json数据可视化修改</p></li><li><p>修改modbus 无数据无法可视化新增</p></li><li><p>增加租户logo上传功能（前端部分）</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 周报 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Event </tag>
-            
-        </tags>
       
     </entry>
     

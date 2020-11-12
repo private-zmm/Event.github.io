@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="article title zjw, aatb">
+    <meta name="keywords" content="hexo,hexo使用,hexo常用命令">
     <meta name="description" content="云想衣裳花想容, 春风拂槛露华浓">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>article title zjw | aatb</title>
+    <title>hexo | aatb</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">article title zjw</h1>
+                    <h1 class="description center-align post-title">hexo</h1>
                 </div>
             </div>
         </div>
@@ -347,8 +347,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Event/">
-                                <span class="chip bg-color">Event</span>
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
                             </a>
                         
                     </div>
@@ -359,8 +359,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%91%A8%E6%8A%A5/" class="post-category">
-                                周报
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
                             </a>
                         
                     </div>
@@ -372,21 +372,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-28
+                    2020-11-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2020-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    67
+                    260
                 </div>
                 
 
@@ -408,18 +408,96 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li><p>仪表板编辑数据源选择实体的翻译补充</p>
-</li>
-<li><p>对svg内容class替换bug修改</p>
-</li>
-<li><p>网关连接器配置的json数据可视化修改</p>
-</li>
-<li><p>修改modbus 无数据无法可视化新增</p>
-</li>
-<li><p>增加租户logo上传功能（前端部分）</p>
-</li>
-</ol>
+                <h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><pre class=" language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span></code></pre>
+<p>创建一个新文章。如果未layout提供，Hexo将使用default_layoutfrom _config.yml。如果title包含空格，请用引号引起来。</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-p</code>, <code>--path</code></td>
+<td>发布路径。自定义帖子的路径。</td>
+</tr>
+<tr>
+<td><code>-r, --replace</code></td>
+<td>替换当前帖子（如果存在）。</td>
+</tr>
+<tr>
+<td><code>-s</code>, <code>--slug</code></td>
+<td>自定义帖子的URL。</td>
+</tr>
+</tbody></table>
+<h2 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h2><pre class=" language-dash"><code class="language-dash">$ hexo g</code></pre>
+<p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>， <code>--deploy</code></td>
+<td align="left">生成完成后进行部署</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>， <code>--watch</code></td>
+<td align="left">观看文件更改</td>
+</tr>
+<tr>
+<td align="left"><code>-b</code>， <code>--bail</code></td>
+<td align="left">如果在生成过程中引发任何未处理的异常，则会引发错误</td>
+</tr>
+<tr>
+<td align="left"><code>-f</code>， <code>--force</code></td>
+<td align="left">强制再生</td>
+</tr>
+<tr>
+<td align="left"><code>-c</code>， <code>--concurrency</code></td>
+<td align="left">并行生成的最大文件数。默认为无穷大</td>
+</tr>
+</tbody></table>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><pre><code>$ hexo s</code></pre>
+<p>启动本地服务器。默认情况下，该位置为<code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>， <code>--port</code></td>
+<td align="left">覆盖默认端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>， <code>--static</code></td>
+<td align="left">仅提供静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>， <code>--log</code></td>
+<td align="left">启用记录器。覆盖记录器格式。</td>
+</tr>
+</tbody></table>
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><pre><code>$ hexo clean</code></pre>
+<p>清除缓存文件（<code>db.json</code>）和生成的文件（<code>public</code>）。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><pre><code>$ hexo d</code></pre>
+<p>部署您的网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>， <code>--generate</code></td>
+<td align="left">部署前生成</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr/>
@@ -435,7 +513,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">zhou jun wei</a>
+                    <a href="/about" rel="external nofollow noreferrer">周俊伟</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -445,7 +523,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://aatb.club/2020/10/28/10.23/">https://aatb.club/2020/10/28/10.23/</a>
+                    <a href="https://aatb.club/2020/11/12/hexonote/">https://aatb.club/2020/11/12/hexonote/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -458,7 +536,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">zhou jun wei</a>
+                    <a href="/about" target="_blank">周俊伟</a>
                     !
                 </span>
             </div>
@@ -483,8 +561,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Event/">
-                                    <span class="chip bg-color">Event</span>
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
                                 </a>
                             
                         </div>
@@ -919,13 +997,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/28/article-title/">
+                <a href="/2020/11/12/git-note/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="article title zjw">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">article title zjw</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -936,15 +1014,31 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zhou jun wei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category">
+                                    git
+                                </a>
+                            
+                            <a href="/categories/git/tool/" class="post-category">
+                                    tool
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -953,16 +1047,15 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/28/10.23/">
+                <a href="/2020/11/02/filereader/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/filereader/1.jpg" class="responsive-img" alt="fileReader">
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="article title zjw">
-                        
-                        <span class="card-title">article title zjw</span>
+                        <span class="card-title">fileReader</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -973,26 +1066,25 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%91%A8%E6%8A%A5/" class="post-category">
-                                    周报
+                            <a href="/categories/html/" class="post-category">
+                                    html
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Event/">
-                        <span class="chip bg-color">Event</span>
+                    <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+                        <span class="chip bg-color">文件上传</span>
                     </a>
                     
                 </div>
@@ -1199,7 +1291,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6k</span>&nbsp;字
+                class="white-color">6.4k</span>&nbsp;字
             
             
             
