@@ -16,7 +16,7 @@ categories: [git,tool]
 `git commit -m ""`
 
 ```dash
-git commit -m "featdf: aas"
+git commit -m "feat: aas"
 ```
 
 ### commit规范
