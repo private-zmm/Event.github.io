@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git | aatb</title>
+    <title>error setting certificate verify locations解决办法 | aatb</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git</h1>
+                    <h1 class="description center-align post-title">error setting certificate verify locations解决办法</h1>
                 </div>
             </div>
         </div>
@@ -376,7 +376,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-12
+                    2020-11-20
                 </div>
                 
 
@@ -390,7 +390,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    239
                 </div>
                 
 
@@ -412,36 +412,29 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="commit"><a href="#commit" class="headerlink" title="commit"></a>commit</h2><p><code>git add . </code></p>
-<p><code>git commit -m &quot;&quot;</code></p>
-<pre class="line-numbers language-dash" data-language="dash"><code class="language-dash">git commit -m &quot;feat: aas&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <pre class="line-numbers language-none"><code class="language-none">git -c diff.mnemonicprefix&#x3D;false -c core.quotepath&#x3D;false fetch origin
 
-<h3 id="commit规范"><a href="#commit规范" class="headerlink" title="commit规范"></a>commit规范</h3><h4 id="Commit-message格式"><a href="#Commit-message格式" class="headerlink" title="Commit message格式"></a>Commit message格式</h4><pre class="line-numbers language-none"><code class="language-none">&lt;type&gt;: &lt;subject&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+fatal: unable to access &#39;https:&#x2F;&#x2F;github.com&#x2F;552277&#x2F;MyCalendar.git&#x2F;&#39;: error setting certificate verify locations:
 
-<p>注意冒号后面有空格。</p>
-<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>用于说明 commit 的类别，只允许使用下面7个标识。</p>
-<ul>
-<li><code>feat</code>：新功能（feature）</li>
-<li><code>fix</code>：修补bug</li>
-<li><code>docs</code>：文档（documentation）</li>
-<li><code>style</code>： 格式（不影响代码运行的变动）</li>
-<li><code>refactor</code>：重构（即不是新增功能，也不是修改bug的代码变动）</li>
-<li><code>test</code>：增加测试</li>
-<li><code>chore</code>：构建过程或辅助工具的变动</li>
-</ul>
-<p><em>如果type为<code>feat</code>和<code>fix</code>，则该 commit 将肯定出现在 Change log 之中。</em></p>
-<h4 id="log"><a href="#log" class="headerlink" title="log"></a>log</h4><p>查看git commit提交记录</p>
-<pre class="line-numbers language-dash" data-language="dash"><code class="language-dash">git log -10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+CAfile: D:&#x2F;Program Files&#x2F;Git&#x2F;mingw64&#x2F;ssl&#x2F;certs&#x2F;ca-bundle.crt
 
-<p>-10 显示最近的十条</p>
-<h4 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h4><p><strong>Git回滚代码到某个commit</strong></p>
-<p>回退命令：</p>
-<p><code>git reset --hard HEAD^ </code>回退到上个版本</p>
-<p><code>git reset --hard HEAD~3</code> 回退到前3次提交之前，以此类推，回退到n次提交之前</p>
-<p><code>git reset --hard commit_id</code> 退到/进到，指定commit的哈希码（这次提交之前或之后的提交都会回滚）</p>
-<p>回滚后提交可能会失败，必须强制提交</p>
-<p><strong>强推到远程：(可能需要解决对应分支的保护状态)</strong></p>
-<p><code>git push origin HEAD --force</code></p>
+CApath: none
+
+完成时带有错误，见上文。
+
+意思是证书位置出现错误<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>因为证书原位于：</p>
+<p>D:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt</p>
+<p>只是后来本人将其中“Program Files”的空格去掉了，所以证书位置就变成了：</p>
+<p>D:/ProgramFiles/Git/mingw64/ssl/certs/ca-bundle.crt</p>
+<p>而git的配置并没有更新证书的位置，所以去原来的位置没有找到而报错</p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>方法一：</p>
+<p>执行命令,关闭证书校验：git config –system http.sslverify false </p>
+<p>方法二：</p>
+<p>更新git配置文件中证书存放位置信息：</p>
+<p>git config –system http.sslcainfo “D:/ProgramFiles/Git/mingw64/ssl/certs/ca-bundle.crt”</p>
+<p>然后重新拉取项目，上述错误将不再出现，得到成功解决</p>
 
             </div>
             <hr/>
@@ -467,7 +460,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://aatb.club/2020/11/12/git-note/">https://aatb.club/2020/11/12/git-note/</a>
+                    <a href="https://aatb.club/2020/11/20/git-sslerr/">https://aatb.club/2020/11/20/git-sslerr/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -941,13 +934,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/11/20/git-sslerr/">
+                <a href="/2020/11/25/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="error setting certificate verify locations解决办法">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">error setting certificate verify locations解决办法</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -958,8 +951,45 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zhou jun wei
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/11/12/git-note/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
+                        
+                        <span class="card-title">git</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -981,55 +1011,6 @@
                     
                     <a href="/tags/git/">
                         <span class="chip bg-color">git</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/11/12/hexonote/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo">
-                        
-                        <span class="card-title">hexo</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/hexo/" class="post-category">
-                                    hexo
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
