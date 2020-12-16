@@ -47,6 +47,20 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
+
+# highlight:
+#   enable: false
+#   line_number: true
+#   auto_detect: false
+#   tab_replace: ''
+#   wrap: true
+#   hljs: false
+# prismjs:
+#   enable: true
+#   preprocess: true
+#   line_number: true
+#   tab_replace: ''
+
 highlight:
   enable: false
 
@@ -56,7 +70,7 @@ prism_plugin:
   line_number: false    # default false
   custom_css:
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
