@@ -61,8 +61,6 @@ git log -10
 
 ```git reset --hard HEAD^ ```回退到上个版本
 
-
-
 ```git reset --hard HEAD~3``` 回退到前3次提交之前，以此类推，回退到n次提交之前
 
 ```git reset --hard commit_id``` 退到/进到，指定commit的哈希码（这次提交之前或之后的提交都会回滚）
@@ -74,5 +72,25 @@ git log -10
 **强推到远程：(可能需要解决对应分支的保护状态)**
 
 ```git push origin HEAD --force```
+
+
+
+**修改commit信息 **
+
+1，修改最近一次的commit 信息
+
+　　```git commit --amend```
+
+　　然后就会进入vim编辑模式
+
+2，比如要修改的commit是倒数第三条，使用下述命令：
+
+　　```git rebase -i HEAD~3```
+
+3， 退出保存 :wq
+
+4，执行 ```git rebase --continue```
+
+5，执行```git push -f``` 推送到服务端。
 
 [^]: 持续更新中。。。

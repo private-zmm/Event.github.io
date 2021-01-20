@@ -1,8 +1,8 @@
 ---
-title: test
+title: hexo-theme-matery
 date: 2020-10-28 17:07:53
-tags: test
-categories: test
+tags: hexo-theme-matery
+categories: hexo-theme-matery
 ---
 # hexo-theme-matery
 
