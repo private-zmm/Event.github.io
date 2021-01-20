@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="article title zjw, aatb">
+    <meta name="keywords" content="async在map里面的应用">
     <meta name="description" content="云想衣裳花想容, 春风拂槛露华浓">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>article title zjw | aatb</title>
+    <title>async | aatb</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -225,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/articImage/1611106303.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">article title zjw</h1>
+                    <h1 class="description center-align post-title">async</h1>
                 </div>
             </div>
         </div>
@@ -345,12 +345,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/async/">
+                                <span class="chip bg-color">async</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/async/" class="post-category">
+                                async
+                            </a>
+                        
+                            <a href="/categories/async/map/" class="post-category">
+                                map
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -359,21 +376,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-28
+                    2021-01-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2021-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    31
                 </div>
                 
 
@@ -395,7 +412,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">await</span> Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>
+         array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">ele</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+           <span class="token comment">// asyncHandle 异步函数</span>
+           <span class="token keyword">const</span> list <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">asyncHandle</span><span class="token punctuation">(</span>ele<span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token keyword">return</span> list<span class="token punctuation">;</span>
+         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+       <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
             </div>
             <hr/>
 
@@ -410,7 +436,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">zhou jun wei</a>
+                    <a href="/about" rel="external nofollow noreferrer">周俊伟</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -420,7 +446,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://aatb.club/2020/10/28/article-title/">https://aatb.club/2020/10/28/article-title/</a>
+                    <a href="https://aatb.club/2021/01/20/async/">https://aatb.club/2021/01/20/async/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -433,7 +459,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">zhou jun wei</a>
+                    <a href="/about" target="_blank">周俊伟</a>
                     !
                 </span>
             </div>
@@ -457,7 +483,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/async/">
+                                    <span class="chip bg-color">async</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -886,66 +916,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2020/10/29/test/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
-                        
-                        <span class="card-title">test</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/test/" class="post-category">
-                                    test
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/10/28/article-title/">
+                <a href="/2021/01/20/async/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/articImage/1611106303.jpg" class="responsive-img" alt="async">
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="article title zjw">
-                        
-                        <span class="card-title">article title zjw</span>
+                        <span class="card-title">async</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -956,17 +937,82 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zhou jun wei
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/async/" class="post-category">
+                                    async
+                                </a>
+                            
+                            <a href="/categories/async/map/" class="post-category">
+                                    map
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/async/">
+                        <span class="chip bg-color">async</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/12/16/iphone-x/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="兼容iPhone X*刘海屏">
+                        
+                        <span class="card-title">兼容iPhone X*刘海屏</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/css/" class="post-category">
+                                    css
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1170,7 +1216,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.2k</span>&nbsp;字
+                class="white-color">8.6k</span>&nbsp;字
             
             
             

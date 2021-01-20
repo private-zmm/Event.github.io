@@ -383,14 +383,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-12-15
+                    2020-12-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    280
+                    359
                 </div>
                 
 
@@ -442,6 +442,15 @@
 <p>回滚后提交可能会失败，必须强制提交</p>
 <p><strong>强推到远程：(可能需要解决对应分支的保护状态)</strong></p>
 <p><code>git push origin HEAD --force</code></p>
+<p>**修改commit信息 **</p>
+<p>1，修改最近一次的commit 信息</p>
+<p>　　<code>git commit --amend</code></p>
+<p>　　然后就会进入vim编辑模式</p>
+<p>2，比如要修改的commit是倒数第三条，使用下述命令：</p>
+<p>　　<code>git rebase -i HEAD~3</code></p>
+<p>3， 退出保存 :wq</p>
+<p>4，执行 <code>git rebase --continue</code></p>
+<p>5，执行<code>git push -f</code> 推送到服务端。</p>
 
             </div>
             <hr/>
@@ -1236,7 +1245,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.2k</span>&nbsp;字
+                class="white-color">8.6k</span>&nbsp;字
             
             
             

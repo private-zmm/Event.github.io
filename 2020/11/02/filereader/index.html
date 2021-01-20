@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="文件上传,fileReader,img转base64">
+    <meta name="keywords" content="文件上传,fileReader,img转base64,base64转blob,base64转file">
     <meta name="description" content="云想衣裳花想容, 春风拂槛露华浓">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -363,6 +363,22 @@
                                 html
                             </a>
                         
+                            <a href="/categories/html/js/" class="post-category">
+                                js
+                            </a>
+                        
+                            <a href="/categories/html/js/base64/" class="post-category">
+                                base64
+                            </a>
+                        
+                            <a href="/categories/html/js/base64/blob/" class="post-category">
+                                blob
+                            </a>
+                        
+                            <a href="/categories/html/js/base64/blob/file/" class="post-category">
+                                file
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -379,21 +395,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-02
+                    2021-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    240
+                    470
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -441,19 +457,62 @@
 <li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/result"><code>FileReader.result</code></a> 文件的内容。该属性仅在读取操作完成后才有效，数据的格式取决于使用哪个方法来启动读取操作。</p>
 </li>
 </ul>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><code>js</code> 如下</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p><code>文件转babase64 js</code> 如下</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'input[type=file]'</span><span class="token punctuation">)</span>
-
   input<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> input<span class="token punctuation">.</span>files <span class="token punctuation">)</span>
-    <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// input.files[0]为第一个文件</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> input<span class="token punctuation">.</span>files <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment">// input.files[0]为第一个文件</span>
+    reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     reader<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-      <span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-      img<span class="token punctuation">.</span>src <span class="token operator">=</span> reader<span class="token punctuation">.</span>result  <span class="token comment">// reader.result 为文件的base64</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span>  <span class="token comment">// reader.result为获取结果</span>
+      <span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// reader.result 为文件的base64</span>
+      img<span class="token punctuation">.</span>src <span class="token operator">=</span> reader<span class="token punctuation">.</span>result<span class="token punctuation">;</span>
+      <span class="token comment">// reader.result为获取结果</span>
+      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>  
     <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>base64转换为file对象</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Base64toFile</span><span class="token punctuation">(</span><span class="token parameter">dataurl<span class="token punctuation">,</span> filename</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> arr <span class="token operator">=</span> dataurl<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mime <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">:(.*?);</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            bstr <span class="token operator">=</span> <span class="token function">atob</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> n <span class="token operator">=</span> bstr<span class="token punctuation">.</span>length<span class="token punctuation">,</span> u8arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            u8arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">=</span> bstr<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token punctuation">[</span>u8arr<span class="token punctuation">]</span><span class="token punctuation">,</span> filename<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>type<span class="token operator">:</span>mime<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>base64转blob</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*2:转bob*/</span>
+<span class="token comment">/**
+ * 将以base64的图片url数据转换为Blob
+ * @param base64    用url方式表示的base64图片数据
+ * @return blob     返回blob对象           
+ */</span>
+<span class="token keyword">function</span> <span class="token function">convertBase64UrlToBlob</span><span class="token punctuation">(</span><span class="token parameter">base64</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">//提取base64头的type如 'image/png'     </span>
+    <span class="token keyword">const</span> type <span class="token operator">=</span>base64<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">:(.*?);</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">//去掉url的头，并转换为byte (atob:编码 btoa:解码)</span>
+    <span class="token keyword">const</span> bytes<span class="token operator">=</span>window<span class="token punctuation">.</span><span class="token function">atob</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//处理异常,将ascii码小于0的转换为大于0 </span>
+    <span class="token comment">//通用的、固定长度(bytes.length)的原始二进制数据缓冲区对象</span>
+    <span class="token keyword">const</span> ab <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span>bytes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> ia <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>ab<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> bytes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ia<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> bytes<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span> <span class="token punctuation">[</span>ab<span class="token punctuation">]</span> <span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>type <span class="token operator">:</span>type<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Blob转base64</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">blobToBase64</span><span class="token punctuation">(</span><span class="token parameter">blob<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    a<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token function">callback</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    a<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
             </div>
             <hr/>
@@ -1002,13 +1061,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/29/test/">
+                <a href="/2020/10/29/hexo-theme-matery/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo-theme-matery">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">hexo-theme-matery</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1025,8 +1084,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/test/" class="post-category">
-                                    test
+                            <a href="/categories/hexo-theme-matery/" class="post-category">
+                                    hexo-theme-matery
                                 </a>
                             
                             
@@ -1036,8 +1095,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/hexo-theme-matery/">
+                        <span class="chip bg-color">hexo-theme-matery</span>
                     </a>
                     
                 </div>
@@ -1244,7 +1303,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.2k</span>&nbsp;字
+                class="white-color">8.6k</span>&nbsp;字
             
             
             
