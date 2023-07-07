@@ -14,7 +14,7 @@ timezone: UTC
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://aatb.club
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -59,6 +59,8 @@ future: true
 #   preprocess: true
 #   line_number: true
 #   tab_replace: ''
+skip_render:
+  baidu_verify_codeva-DXd0p4maAX.html
 
 highlight:
   enable: false
@@ -137,3 +139,14 @@ deploy:
   type: git
   repository: https://github.com/private-zmm/Event.github.io.git
   branch: gh-pages
+
+# sitemap
+sitemap:
+  path: baidusitemap.xml
+
+baidu_url_submit:
+  count: 100 # 提交最新的一个链接
+  host: www.bkduck.cn # 在百度站长平台中注册的域名
+  token: lY..........Fk # 请注意这是您的秘钥，所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址，新链接会保存在此文本文档里
+
